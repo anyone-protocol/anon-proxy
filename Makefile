@@ -34,7 +34,7 @@ INSTALL_FLAGS = -D -m
 
 SHARED_LIBS = $(LDSO_PATHNAME)
 ALL_LIBS = $(SHARED_LIBS)
-PXCHAINS = proxychains4
+PXCHAINS = anon-proxy
 ALL_TOOLS = $(PXCHAINS)
 
 CCFLAGS+=$(USER_CFLAGS) $(OS_CFLAGS)
@@ -48,7 +48,7 @@ ifeq ($(UNAME_S),Linux)
     LDSO_SUFFIX = so.4
 endif
 ifeq ($(UNAME_S),Darwin)
-	LDSO_PATHNAME = libproxychains4.$(LDSO_SUFFIX)
+	LDSO_PATHNAME = libanon-proxy.$(LDSO_SUFFIX)
     LDSO_SUFFIX = dylib
 endif
 
@@ -69,7 +69,7 @@ install-config:
 
 install-zsh-completion:
 	install -d $(DESTDIR)/$(zshcompdir)
-	install $(INSTALL_FLAGS) 644 completions/zsh/_proxychains4 -t $(DESTDIR)/$(zshcompdir)
+	install $(INSTALL_FLAGS) 644 completions/zsh/_anon-proxy -t $(DESTDIR)/$(zshcompdir)
 
 clean:
 	rm -f $(ALL_LIBS)

@@ -26,7 +26,7 @@
 #include "common.h"
 
 static int usage(char **argv) {
-	printf( "\nProxychains4: %d.%d.%d\n"
+	printf( "\nAnon Proxy: %d.%d.%d\n"
 			"Usage:\t%s -q -f config_file program_name [arguments]\n"
 			"\t-v print version and exit\n"
 	       	"\t-q makes proxychains quiet - this overrides the config setting\n"
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
 				quiet = 1;
 				start_argv++;
 			} else if(argv[start_argv][1] == 'v') {
-				printf("Proxychains4 version: %d.%d.%d\n", PROXYCHAINS_VERSION_MAJOR, PROXYCHAINS_VERSION_MINOR, PROXYCHAINS_VERSION_BUGFIX);
+				printf("Anon Proxy version: %d.%d.%d\n", PROXYCHAINS_VERSION_MAJOR, PROXYCHAINS_VERSION_MINOR, PROXYCHAINS_VERSION_BUGFIX);
 				exit(EXIT_SUCCESS);
 
 			} else if(argv[start_argv][1] == 'f') {

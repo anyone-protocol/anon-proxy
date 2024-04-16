@@ -11,4 +11,5 @@ libtool
 config.*
 stamp-h
 proxychains4
+anon-proxy
 *.dylib

@@ -32,7 +32,7 @@ setup_proxy_env() {
 
 	if [ $(uname -s) = "Darwin" ]; then
 		export DYLD_FORCE_FLAT_NAMESPACE=
-		export DYLD_INSERT_LIBRARIES=libproxychains4.dylib
+		export DYLD_INSERT_LIBRARIES=libanon-proxy.dylib
 	else
 		export LD_PRELOAD=libproxychains.so.4
 	fi
@@ -42,7 +42,7 @@ disable_proxy_env() {
 
 	if [ $(uname -s) = "Darwin" ]; then
 		unset DYLD_FORCE_FLAT_NAMESPACE
-		export DYLD_INSERT_LIBRARIES=$(echo $DYLD_INSERT_LIBRARIES | sed -e 's/libproxychains4.dylib//g')
+		export DYLD_INSERT_LIBRARIES=$(echo $DYLD_INSERT_LIBRARIES | sed -e 's/libanon-proxy.dylib//g')
 		if [ -z $DYLD_INSERT_LIBRARIES ]; then
 			unset DYLD_INSERT_LIBRARIES
 		fi

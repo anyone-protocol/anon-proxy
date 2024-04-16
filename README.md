@@ -134,7 +134,7 @@ see more in */etc/proxychains.conf*
 ### Usage Example
 
 ```
-$ proxychains4 telnet targethost.com
+$ anon-proxy telnet targethost.com
 ```
 
 in this example it will run telnet through proxy(or chained proxies)
@@ -143,7 +143,7 @@ specified by *proxychains.conf*
 ### Usage Example
 
 ```
-$ proxychains4 -f /etc/proxychains-other.conf targethost2.com
+$ anon-proxy -f /etc/proxychains-other.conf targethost2.com
 ```
 
 in this example it will use different configuration file then *proxychains.conf*
@@ -172,7 +172,7 @@ OpenSSH's "dynamic proxy" (SOCKS5 proxy) on localhost port 4321.
 
 ```
 $ export PROXY_DNS_SERVER=8.8.8.8
-$ proxychains4 telnet targethost.com
+$ anon-proxy telnet targethost.com
 ```
 
 in this example, it will telnet to targethost.com using the 8.8.8.8
