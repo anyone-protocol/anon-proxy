@@ -63,7 +63,15 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: artifacts/
+      - name: Copy release artifacts
+        run: |
+          mkdir -p release-artifacts/
+          chmod +x artifacts/anon-*/*
+          zip -j release-artifacts/anon-proxy-linux-amd64.zip artifacts/anon-proxy-linux-amd64/*
+          zip -j release-artifacts/anon-proxy-macos-amd64.zip artifacts/anon-proxy-macos-amd64/*
+          zip -j release-artifacts/anon-proxy-macos-arm64.zip artifacts/anon-proxy-macos-arm64/*
+          ls -la -R release-artifacts/
       - name: Publish release artifacts
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "artifacts/*"
+          artifacts: "artifacts/anon-*"
