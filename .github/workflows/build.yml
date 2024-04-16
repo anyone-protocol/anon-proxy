@@ -34,7 +34,7 @@ jobs:
           - runner: macos-14
             os: macos
             arch: arm64
-            libs: dylib
+            lib: dylib
 
     steps:
       - uses: actions/checkout@v3
