@@ -22,16 +22,19 @@ jobs:
           - runner: ubuntu-latest
             os: linux
             arch: amd64
+            lib: so.4
 
           # MacOS Intel
           - runner: macos-13
             os: macos
             arch: amd64
+            lib: dylib
 
           # MacOS Apple Silicon
           - runner: macos-14
             os: macos
             arch: arm64
+            libs: dylib
 
     steps:
       - uses: actions/checkout@v3
@@ -52,7 +55,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: anon-proxy-${{ matrix.build.os }}-${{ matrix.build.arch }}
-          path: anon-proxy
+          path: |
+            anon-proxy
+            libanon-proxy.${{ matrix.build.lib }}
 
   release-github:
     runs-on: ubuntu-latest
