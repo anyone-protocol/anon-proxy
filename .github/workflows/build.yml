@@ -74,4 +74,4 @@ jobs:
       - name: Publish release artifacts
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "artifacts/anon-*"
+          artifacts: "release-artifacts/anon-*.zip"
