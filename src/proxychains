@@ -22,7 +22,7 @@ find_proxy_conf() {
 }
 
 #
-# XXX We should not overide possible user settings here. Just add libproxychains to it.
+# XXX We should not overide possible user settings here. Just add libanon-proxy to it.
 # 
 setup_proxy_env() {
 
@@ -34,7 +34,7 @@ setup_proxy_env() {
 		export DYLD_FORCE_FLAT_NAMESPACE=
 		export DYLD_INSERT_LIBRARIES=libanon-proxy.dylib
 	else
-		export LD_PRELOAD=libproxychains.so.4
+		export LD_PRELOAD=libanon-proxy.so.4
 	fi
 }
 
@@ -47,7 +47,7 @@ disable_proxy_env() {
 			unset DYLD_INSERT_LIBRARIES
 		fi
 	else
-		export LD_PRELOAD=$(echo $DYLD_INSERT_LIBRARIES | sed -e 's/libproxychains.so.4//g')
+		export LD_PRELOAD=$(echo $DYLD_INSERT_LIBRARIES | sed -e 's/libanon-proxy.so.4//g')
 		if [ -z $LD_PRELOAD ]; then
 			unset LD_PRELOAD
 		fi

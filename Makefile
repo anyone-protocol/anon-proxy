@@ -17,7 +17,7 @@ zshcompdir = $(datadir)/zsh/site-functions
 
 SRCS = $(sort $(wildcard src/*.c))
 OBJS = $(SRCS:.c=.o)
-LOBJS = src/core.o src/common.o src/libproxychains.o
+LOBJS = src/core.o src/common.o src/libanon-proxy.o
 DEPS = $(OBJS:.o=.d)
 
 CCFLAGS  = -MD -Wall -O2 -g -std=c99 -D_GNU_SOURCE -pipe -DTHREAD_SAFE -Werror
@@ -44,7 +44,7 @@ CFLAGS_MAIN=-DLIB_DIR=\"$(libdir)\" -DINSTALL_PREFIX=\"$(prefix)\" -DDLL_NAME=\"
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
-	LDSO_PATHNAME = libproxychains.$(LDSO_SUFFIX)
+	LDSO_PATHNAME = libanon-proxy.$(LDSO_SUFFIX)
     LDSO_SUFFIX = so.4
 endif
 ifeq ($(UNAME_S),Darwin)

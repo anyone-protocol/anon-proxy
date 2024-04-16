@@ -1,5 +1,5 @@
 /***************************************************************************
-                          libproxychains.c  -  description
+                          libanon-proxy.c  -  description
                              -------------------
     begin                : Tue May 14 2002
     copyright          :  netcreature (C) 2002

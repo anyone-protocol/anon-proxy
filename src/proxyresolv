@@ -20,5 +20,5 @@ if [ "$?" -eq "0" ]; then
         exit
 fi
 
-export LD_PRELOAD=libproxychains.so
+export LD_PRELOAD=libanon-proxy.so
 drill $1 @$DNS_SERVER -t | awk '/A.+[0-9]+\.[0-9]+\.[0-9]/{print $5;}'
