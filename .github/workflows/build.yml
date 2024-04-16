@@ -24,6 +24,12 @@ jobs:
             arch: amd64
             lib: so.4
 
+          # Ubuntu Arm64
+          - runner: arm64
+            os: linux
+            arch: arm64
+            lib: so.4
+
           # MacOS Intel
           - runner: macos-13
             os: macos
