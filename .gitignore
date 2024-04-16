@@ -4,7 +4,6 @@
 *.lo
 .deps/
 .libs/
-.*
 src/*.d
 # Autoconf stuff 
 libtool
